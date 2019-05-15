@@ -1,0 +1,22 @@
+<!--<mat-label>{{title}}</mat-label>
+<mat-select [(value)]="defaultValue">
+  <mat-option *ngFor="let option of options" [value]="option.value">
+    {{option.viewValue}}
+  </mat-option>
+</mat-select>-->
+<!--
+<div class="input-group mb-3 mt-2">
+  <select class="custom-select" [multiple]="multiple">
+    <option *ngFor="let option of options" [value]="option.value">{{option.viewValue}}</option>
+  </select>
+</div>-->
+
+<ng-multiselect-dropdown
+  [placeholder]="title"
+  [data]="dropdownList"
+  [(ngModel)]="defaultValue"
+  [settings]="dropdownSettings"
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onItemSelectAll($event)"
+>
+</ng-multiselect-dropdown>
