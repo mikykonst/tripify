@@ -1,4 +1,4 @@
 export interface Meals {
   id: string;
-  name: string;
+  itemName: string;
 }

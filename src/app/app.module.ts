@@ -64,6 +64,7 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -133,7 +134,8 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     NgMultiSelectDropDownModule.forRoot(),
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularMultiSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

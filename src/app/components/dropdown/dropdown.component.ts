@@ -12,11 +12,11 @@ export class DropdownComponent implements OnInit {
   @Input() multiple: boolean;
   @Input() title: string;
   @Output() valuesChanged = new EventEmitter<any>();
-  @Output() defaultValueChanged  = new EventEmitter<any>();
+  @Output() defaultValueChanged = new EventEmitter<any>();
 
   dropdownList = [];
-  selectedItems = [];
-  dropdownSettings = {};
+  @Input() selectedItems = [];
+  dropdownSettings: any;
 
   constructor() {
   }
@@ -25,23 +25,23 @@ export class DropdownComponent implements OnInit {
     this.dropdownList = this.options;
     this.selectedItems = [];
     this.dropdownSettings = {
-      singleSelection: false,
-      idField: 'id',
-      textField: 'name',
-      selectAllText: 'Выбрать всё',
-      unSelectAllText: 'Отменить выбор',
-      itemsShowLimit: 4,
-      allowSearchFilter: true
+      singleSelection: !this.multiple,
+      text: this.title,
+      enableSearchFilter: true
     };
   }
 
-  onItemSelect(item: any) {
-    this.defaultValue = [item];
-    this.valuesChanged.emit([item]);
+  onItemSelect() {
+    this.valuesChanged.emit(this.selectedItems);
   }
 
   onItemSelectAll(items) {
     this.defaultValue = [...items];
     this.valuesChanged.emit([...items]);
+  }
+
+  onItemDeSelect(item: any) {
+    console.log(item);
+    console.log(this.selectedItems);
   }
 }

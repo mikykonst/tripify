@@ -1,18 +1,22 @@
 <div class="example-container">
   <div class="row">
     <div class="col-lg-2 col-sm-12 col-md-6 mt-2">
-      <app-dropdown [defaultValue]="searchData.city" [options]="cities" [title]="'Откуда?'" (valuesChanged)="updateCity($event)"></app-dropdown>
+      <app-dropdown [defaultValue]="searchData.city" [selectedItems]="cities" [options]="cities" [title]="'Откуда?'"
+                    (valuesChanged)="updateCity($event)" [multiple]="true"></app-dropdown>
     </div>
     <div class="col-lg-2 col-sm-12 col-md-6 mt-2">
-      <app-dropdown [defaultValue]="searchData.country" [options]="countries" [title]="'Куда?'" (valuesChanged)="updateCountry($event)"></app-dropdown>
+      <app-dropdown [defaultValue]="searchData.country" [options]="countries" [title]="'Куда?'"
+                    (valuesChanged)="updateCountry($event)" [multiple]="true"></app-dropdown>
     </div>
     <app-datepicker class="col-lg-3 col-sm-12 col-md-6 mt-2"
                     (dateRangeSelection)="updateDates($event)"></app-datepicker>
     <div class="col-lg-2 col-sm-12 col-md-6 mt-2">
-      <app-dropdown [defaultValue]="searchData.nightsFrom" [options]="nightsFrom" [title]="'От'" (valuesChanged)="updateFrom($event)" (defaultValueChanged)="updateTo($event)"></app-dropdown>
+      <app-dropdown [defaultValue]="searchData.nightsFrom" [options]="nightsFrom" [title]="'От'"
+                    (valuesChanged)="updateFrom($event)" [multiple]="false"></app-dropdown>
     </div>
     <div class="col-lg-2 col-sm-12 col-md-6 mt-2">
-      <app-dropdown [defaultValue]="searchData.nightsTo" [options]="nightsTo" [title]="'До'" (valuesChanged)="updateTo($event)"></app-dropdown>
+      <app-dropdown [defaultValue]="searchData.nightsTo" [options]="nightsTo" [title]="'До'"
+                    (valuesChanged)="updateTo($event)" [multiple]="false"></app-dropdown>
     </div>
   </div>
   <div class="row">
@@ -30,22 +34,10 @@
         <div ngbDropdownMenu aria-labelledby="dropdownConfig">
           <form class="px-4 py-3">
             <div class="form-group">
-              <mat-form-field>
-                <mat-label>Взрослых:</mat-label>
-                <mat-select [(value)]="searchData.tourists.adults">
-                  <mat-option value="1">1</mat-option>
-                  <mat-option value="2">2</mat-option>
-                  <mat-option value="3">3</mat-option>
-                </mat-select>
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>Детей:</mat-label>
-                <mat-select [(value)]="searchData.tourists.children">
-                  <mat-option value="1">1</mat-option>
-                  <mat-option value="2">2</mat-option>
-                  <mat-option value="3">3</mat-option>
-                </mat-select>
-              </mat-form-field>
+                <app-dropdown [defaultValue]="searchData.tourists.adults" [title]="'Взрослые'" [options]="adults"
+                              (valuesChanged)="updateAdults($event)" [multiple]="false"></app-dropdown>
+                <app-dropdown [defaultValue]="searchData.tourists.children" [title]="'Дети'" [options]="children"
+                              (valuesChanged)="updateChildren($event)" [multiple]="false"></app-dropdown>
               <button class="btn btn-outline-info btn-block"
                       (click)="$event.stopPropagation(); dropdownTourists.close()">Готово
               </button>

@@ -19,54 +19,54 @@ export class MockserviceService {
 
   getCities() {
     const cities: Cities[] = [
-      {id: 'Киев', name: 'Киев'},
-      {id: 'Днепр', name: 'Днепр'},
-      {id: 'Харьков', name: 'Харьков'}
+      {id: 'Киев', itemName: 'Киев'},
+      {id: 'Днепр', itemName: 'Днепр'},
+      {id: 'Харьков', itemName: 'Харьков'}
     ];
     return cities;
   }
 
   getCountries() {
     const countries: Countries[] = [
-      {id: 'Турция', name: 'Турция'},
-      {id: 'Египет', name: 'Египет'},
-      {id: 'Польша', name: 'Польша'}
+      {id: 'Турция', itemName: 'Турция'},
+      {id: 'Египет', itemName: 'Египет'},
+      {id: 'Польша', itemName: 'Польша'}
     ];
     return countries;
   }
 
   getTourists() {
     const tourists: Tourists[] = [
-      {id: '1', name: '1'},
-      {id: '2', name: '2'},
-      {id: '3', name: '3'}
+      {id: '1', itemName: '1'},
+      {id: '2', itemName: '2'},
+      {id: '3', itemName: '3'}
     ];
     return tourists;
   }
 
   getChildren() {
     const children: Child[] = [
-      {id: '1', name: '1'},
-      {id: '2', name: '2'},
-      {id: '3', name: '3'}
+      {id: '1', itemName: '1'},
+      {id: '2', itemName: '2'},
+      {id: '3', itemName: '3'}
     ];
     return children;
   }
 
   getMeals() {
     const meals: Meals[] = [
-      {id: 'BB', name: 'BB'},
-      {id: 'AI', name: 'AI'},
-      {id: 'UAI', name: 'UAI'}
+      {id: 'BB', itemName: 'BB'},
+      {id: 'AI', itemName: 'AI'},
+      {id: 'UAI', itemName: 'UAI'}
     ];
     return meals;
   }
 
   getCategories() {
     const categories: Categories[] = [
-      {id: '3', name: '3'},
-      {id: '4', name: '4'},
-      {id: '5', name: '5'}
+      {id: '3', itemName: '3'},
+      {id: '4', itemName: '4'},
+      {id: '5', itemName: '5'}
     ];
     return categories;
   }

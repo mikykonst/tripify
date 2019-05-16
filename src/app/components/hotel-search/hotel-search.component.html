@@ -1,3 +1,10 @@
-<p>
-  hotel-search works!
-</p>
+<div>
+  <input class="form-control" type="text" placeholder="Название отеля" [(ngModel)]="searchData.hotelName">
+  <app-dropdown [title]="'Все страны'" [defaultValue]="searchData.country" (valuesChanged)="updateCountries($event)"
+                [multiple]="true" [options]="countries"></app-dropdown>
+  <app-dropdown [title]="'Категория'" [defaultValue]="searchData.category" (valuesChanged)="updateCategories($event)"
+                [multiple]="true" [options]="categories"></app-dropdown>
+  <app-dropdown [title]="'Пансион'" [defaultValue]="searchData.meals" (valuesChanged)="updateMeals($event)"
+                [multiple]="true" [options]="meals"></app-dropdown>
+  <button class="btn btn-outline-success" (click)="sendRequest()">Найти тур</button>
+</div>

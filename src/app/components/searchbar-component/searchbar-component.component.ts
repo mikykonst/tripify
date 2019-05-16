@@ -7,6 +7,8 @@ import { Countries } from '../../models/countries';
 import { Categories } from '../../models/categories';
 import { Meals } from '../../models/meals';
 import { SearchData } from '../../models/search-data';
+import { Tourists } from '../../models/tourists';
+import { Child } from '../../models/child';
 
 @Component({
   selector: 'app-searchbar-component',
@@ -22,6 +24,8 @@ export class SearchbarComponentComponent implements OnInit {
   meals: Meals[];
   nightsFrom: any[];
   nightsTo: any[];
+  adults: Tourists[];
+  children: Child[];
 
   mockService: MockserviceService;
 
@@ -35,25 +39,27 @@ export class SearchbarComponentComponent implements OnInit {
     this.countries = this.mockService.getCountries();
     this.meals = this.mockService.getMeals();
     this.categories = this.mockService.getCategories();
+    this.adults = this.mockService.getTourists();
+    this.children = this.mockService.getChildren();
 
     this.nightsFrom = [
-      {id: '2', name: '2'},
-      {id: '3', name: '3'},
-      {id: '4', name: '4'},
-      {id: '5', name: '5'},
-      {id: '6', name: '6'},
-      {id: '7', name: '7'},
-      {id: '8', name: '8'}
+      {id: '2', itemName: '2'},
+      {id: '3', itemName: '3'},
+      {id: '4', itemName: '4'},
+      {id: '5', itemName: '5'},
+      {id: '6', itemName: '6'},
+      {id: '7', itemName: '7'},
+      {id: '8', itemName: '8'}
     ];
 
     this.nightsTo = [
-      {id: '2', name: '2'},
-      {id: '3', name: '3'},
-      {id: '4', name: '4'},
-      {id: '5', name: '5'},
-      {id: '6', name: '6'},
-      {id: '7', name: '7'},
-      {id: '8', name: '8'}
+      {id: '2', itemName: '2'},
+      {id: '3', itemName: '3'},
+      {id: '4', itemName: '4'},
+      {id: '5', itemName: '5'},
+      {id: '6', itemName: '6'},
+      {id: '7', itemName: '7'},
+      {id: '8', itemName: '8'}
     ];
 
     this.searchData = {
@@ -100,12 +106,18 @@ export class SearchbarComponentComponent implements OnInit {
   }
 
   updateTo(nightsTo) {
-    debugger;
-    nightsTo > this.searchData.nightsFrom ? this.searchData.nightsTo = nightsTo
-      : alert('До должно быть больше чем от!');
+    this.searchData.nightsTo = nightsTo;
   }
 
   updateCategories(categories) {
     this.searchData.category = categories;
+  }
+
+  updateAdults(adults: any) {
+    this.searchData.tourists.adults = adults;
+  }
+
+  updateChildren(children: any) {
+    this.searchData.tourists.children = children;
   }
 }
