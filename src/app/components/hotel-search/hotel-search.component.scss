@@ -1,0 +1,7 @@
+.example-container {
+  padding-left: 10px;
+  & .input {
+    margin: 5px 0 5px 0;
+    width: 80%;
+  }
+}

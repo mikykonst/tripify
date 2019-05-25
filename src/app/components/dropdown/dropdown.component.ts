@@ -11,6 +11,7 @@ export class DropdownComponent implements OnInit {
   @Input() defaultValue: any;
   @Input() multiple: boolean;
   @Input() title: string;
+  @Input() searchFilter: boolean;
   @Output() valuesChanged = new EventEmitter<any>();
   @Output() defaultValueChanged = new EventEmitter<any>();
 
@@ -27,7 +28,7 @@ export class DropdownComponent implements OnInit {
     this.dropdownSettings = {
       singleSelection: !this.multiple,
       text: this.title,
-      enableSearchFilter: true
+      enableSearchFilter: this.searchFilter,
     };
   }
 

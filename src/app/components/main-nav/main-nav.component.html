@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="'over'"
+      [opened]="false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#"><fa-icon style="color: red; margin-right: 5px" [icon]="faHotToursIcon"></fa-icon>Горящие туры</a>
+      <a mat-list-item href="#"><fa-icon style="color: mediumseagreen; margin-right: 5px" [icon]="faCheapTours"></fa-icon>Туры до 300$</a>
+      <a mat-list-item href="#"><fa-icon style="color: cornflowerblue; margin-right: 5px" [icon]="faContacts"></fa-icon>Контакты</a>
+      <a mat-list-item href="#"><fa-icon style="color: cadetblue; margin-right: 5px" [icon]="faInfoCircle"></fa-icon>Помощь</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="height: 120px">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="true">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="col">
+        <a href="/"><div class="logo"></div></a>
+      </div>
+    </mat-toolbar>
+    <ng-content></ng-content>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

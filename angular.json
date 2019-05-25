@@ -33,8 +33,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap-select/dist/css/bootstrap-select.min.css"
             ],
-            "scripts": [
-            ],
+            "scripts": [],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -144,5 +143,8 @@
       }
     }
   },
-  "defaultProject": "tripify"
+  "defaultProject": "tripify",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  }
 }

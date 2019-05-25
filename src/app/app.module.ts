@@ -65,6 +65,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { MainNavComponent } from './components/main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,8 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
     SearchTabsComponent,
     HotelSearchComponent,
     MainPageComponent,
-    DropdownComponent
+    DropdownComponent,
+    MainNavComponent,
   ],
   imports: [
     NgbModule,
@@ -135,7 +138,8 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
     NgMultiSelectDropDownModule.forRoot(),
     GraphQLModule,
     HttpClientModule,
-    AngularMultiSelectModule
+    AngularMultiSelectModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
